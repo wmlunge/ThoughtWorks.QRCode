@@ -1,6 +1,5 @@
 ﻿# ThoughtWorks.QRCode.Core
-#### 介绍
-#####ThoughtWorks.QRCode扩展
+####ThoughtWorks.QRCode Core版扩展
 ThoughtWorks.QRCode很好用，但是该类库不支持.net core<br/>
 作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本<br/>
 如有侵权请联系我删除！！！<br/>
