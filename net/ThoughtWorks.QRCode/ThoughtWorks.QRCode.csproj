@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C6E0FFF-A3CC-4FD2-BFDE-BE652C000417}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>ThoughtWorks.QRCode</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\SymbolNotFoundException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Ecc\BCH15_5.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\SystemUtils.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\QRCodeEncoder.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\FinderPatternNotFoundException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Data\QRCodeSymbol.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Data\QRCodeImage.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Data\QRCodeBitmapImage.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\ContentConverter.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Reader\Pattern\AlignmentPattern.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Geom\Line.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\DebugCanvas.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\DebugCanvasAdapter.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Reader\QRCodeDataBlockReader.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\VersionInformationException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\ConsoleCanvas.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\InvalidDataBlockException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Ecc\ReedSolomon.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Properties\ResourceMap.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Properties\Resources.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\InvalidVersionInfoException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Reader\Pattern\LogicalSeed.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\QRCodeDecoder.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Reader\QRCodeImageReader.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Geom\Axis.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Reader\Pattern\FinderPattern.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\AlignmentPatternNotFoundException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\Color_Fields.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\Color.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Codec\Util\QRCodeUtility.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Geom\SamplingGrid.cs" />
+    <Compile Include="ThoughtWorks\QRCode\Geom\Point.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\InvalidVersionException.cs" />
+    <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\DecodingFailedException.cs" />
+    <EmbeddedResource Include="ThoughtWorks.QRCode.Properties.Resources.resources" />
+  </ItemGroup>
+</Project>
