@@ -3,17 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageId>ThoughtWorks.QRCode.Core</PackageId>
-    <Authors>atalent</Authors>
+    <Authors>haoersheng,atalent</Authors>
     <Product>ThoughtWorks.QRCode.Core</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://gitee.com/atalent/ThoughtWorks.QRCode.Core</PackageProjectUrl>
     <Description>ThoughtWorks.QRCode扩展
-ThoughtWorks.QRCode的作者不知道是谁，也没有留联系方式
-然后也不支持.net core，于是我通过反编译dll，做了个.net core版本
+ThoughtWorks.QRCode很好用，但是该类库不支持.net core
+作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本
 如有侵权请联系我删除！！！</Description>
     <PackageReleaseNotes>ThoughtWorks.QRCode扩展
-ThoughtWorks.QRCode的作者不知道是谁，也没有留联系方式
-然后也不支持.net core，于是我通过反编译dll，做了个.net core版本
+ThoughtWorks.QRCode很好用，但是该类库不支持.net core
+作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本
 如有侵权请联系我删除！！！</PackageReleaseNotes>
     <PackageTags>ThoughtWorks.QRCode.Core</PackageTags>
     <RepositoryUrl>https://gitee.com/atalent/ThoughtWorks.QRCode.Core</RepositoryUrl>
@@ -21,6 +21,7 @@ ThoughtWorks.QRCode的作者不知道是谁，也没有留联系方式
     <PackageIconUrl>https://assets.gitee.com/assets/favicon.ico</PackageIconUrl>
     <PackageLicenseUrl>https://gitee.com/atalent/ThoughtWorks.QRCode.Core</PackageLicenseUrl>
     <Copyright>ThoughtWorks.QRCode</Copyright>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
