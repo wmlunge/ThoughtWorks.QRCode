@@ -34,7 +34,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Global.cs" />
     <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\SymbolNotFoundException.cs" />
     <Compile Include="ThoughtWorks\QRCode\Codec\Ecc\BCH15_5.cs" />
     <Compile Include="ThoughtWorks\QRCode\Codec\Util\SystemUtils.cs" />
