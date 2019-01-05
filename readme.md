@@ -1,17 +1,17 @@
 ﻿# ThoughtWorks.QRCode.Core
 #### ThoughtWorks.QRCode Core版扩展
-ThoughtWorks.QRCode很好用，但是该类库不支持.net core<br/>
-作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本<br/>
-如有侵权请联系我删除！！！<br/>
-<br/>
-代码中必须使用<br/>
-qrCodeEncoder.QRCodeScale = 4;<br/>
-qrCodeEncoder.QRCodeVersion = 5;<br/>
-因为.net core版本中的resource没有完全加载<br/>
-有兴趣的同学可以帮我实现完全加载<br/>
-源码地址：[https://gitee.com/atalent/ThoughtWorks.QRCode.Core](https://gitee.com/atalent/ThoughtWorks.QRCode.Core)<br/>
-有.net版本的sln和.net core版本的sln，运行之后查看//TODO:，你就懂了<br/>
-<br/>
+ThoughtWorks.QRCode很好用，但是该类库不支持.net core
+作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本
+如有侵权请联系我删除！！！
+
+代码中必须使用
+qrCodeEncoder.QRCodeScale = 4;
+qrCodeEncoder.QRCodeVersion = 5;
+因为.net core版本中的resource没有完全加载
+有兴趣的同学可以帮我实现完全加载
+源码地址：[https://gitee.com/atalent/ThoughtWorks.QRCode.Core](https://gitee.com/atalent/ThoughtWorks.QRCode.Core)
+有.net版本的sln和.net core版本的sln，运行之后查看//TODO:，你就懂了
+
 以下是代码摘要
 ```
 using System;
