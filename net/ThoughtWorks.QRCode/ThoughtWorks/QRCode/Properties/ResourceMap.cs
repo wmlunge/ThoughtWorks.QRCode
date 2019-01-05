@@ -27,7 +27,8 @@ namespace ThoughtWorks.QRCode.Properties
             var bytes = (byte[])Resources.ResourceManager.GetObject(name);
             var base64 = Convert.ToBase64String(bytes);
             File.WriteAllText(name, base64, Encoding.ASCII);
-            Console.WriteLine("Please add {0} to the Map by source code at \r\n {1}", name, new StackTrace(true));
+            //TODO:把结果添加到Map中，提供给.net_core版本
+            Console.WriteLine("//TODO:把结果添加到Map中，提供给.net_core版本");
 
             return bytes;
         }
