@@ -11,10 +11,10 @@ namespace Dome
         static void Main(string[] args)
         {
             //获取资源
-            //QrCodeUtil.SaveResource();
+            QrCodeUtil.SaveResource();
 
             //编码测试
-            QrCodeUtil.EncodeTest();
+            //QrCodeUtil.EncodeTest();
 
             //var path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             //var qr = QrCodeUtil.Encode("Hello World!");

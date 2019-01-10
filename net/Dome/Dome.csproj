@@ -49,16 +49,10 @@
     <Compile Include="QrCodeUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj">
       <Project>{9c6e0fff-a3cc-4fd2-bfde-be652c000417}</Project>
       <Name>ThoughtWorks.QRCode</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EnumResourceResult.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 
@@ -22,11 +20,9 @@ namespace ThoughtWorks.QRCode.Properties
 
             StringBuilder sb = new StringBuilder();
             foreach (var name in namesString.Split(','))
-            {
-                sb.AppendLine(name);
-                sb.AppendLine(Convert.ToBase64String(Get(name)));
-            }
-            File.WriteAllText("Base64s.txt", sb.ToString(), Encoding.ASCII);
+                sb.AppendFormat("mMap.Add(\"{0}\", \"{1}\");\r\n", name, Convert.ToBase64String(Get(name)));
+
+            File.WriteAllText("Base64sMapCode.txt", sb.ToString(), Encoding.ASCII);
         }
     }
 }
