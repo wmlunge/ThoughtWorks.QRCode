@@ -37,7 +37,7 @@ namespace Dome
         /// <summary>
         /// 存储资源
         /// </summary>
-        public static void SaveEnum()
+        public static void SaveResource()
         {
             ThoughtWorks.QRCode.Properties.ResourceMap.Save();
         }

@@ -20,7 +20,7 @@ namespace Dome
             //Console.WriteLine(QrCodeUtil.Decode(path));
 
             QrCodeUtil.ResourceEnum();
-            QrCodeUtil.SaveEnum();
+            QrCodeUtil.SaveResource();
 
             Console.WriteLine("Press enter to exit...");
             Console.ReadLine();
