@@ -8,7 +8,7 @@ namespace ThoughtWorks.QRCode.Properties
 {
     public static class ResourceMap
     {
-        private static Dictionary<string, string> mMapNameBase64 = new Dictionary<string, string>();
+        private static Dictionary<string, string> mMap = new Dictionary<string, string>();
 
         static string mPath = "Base64s.txt";
         static ResourceMap()
@@ -17,23 +17,34 @@ namespace ThoughtWorks.QRCode.Properties
             {
                 var lines = File.ReadAllLines(mPath, Encoding.ASCII);
                 for (int index = 0; index < lines.Length; index += 2)
-                    mMapNameBase64.Add(lines[index], lines[index + 1]);
+                    mMap.Add(lines[index], lines[index + 1]);
             }
         }
 
         public static byte[] Get(string name)
         {
-            if (mMapNameBase64.ContainsKey(name))
-                return Convert.FromBase64String(mMapNameBase64[name]);
+            if (mMap.ContainsKey(name))
+                return Convert.FromBase64String(mMap[name]);
 
             var bytes = (byte[])Resources.ResourceManager.GetObject(name);
             var base64 = Convert.ToBase64String(bytes);
-            mMapNameBase64.Add(name, base64);
+
+            Console.WriteLine("//TODO:把结果添加到Map中，提供给.net_core版本 " + name);
             //TODO:把结果添加到Map中，提供给.net_core版本
-            File.AppendAllLines(mPath, new string[] { name, base64 }, Encoding.ASCII);
-            Console.WriteLine("//TODO:把结果添加到Map中，提供给.net_core版本");
+            mMap.Add(name, base64);
 
             return bytes;
+        }
+
+        public static void Save()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in mMap)
+            {
+                sb.AppendLine(item.Key);
+                sb.AppendLine(item.Value);
+            }
+            File.WriteAllText(mPath, sb.ToString(), Encoding.ASCII);
         }
     }
 }
