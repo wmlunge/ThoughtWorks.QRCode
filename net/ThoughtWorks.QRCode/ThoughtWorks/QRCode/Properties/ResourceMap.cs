@@ -14,7 +14,7 @@ namespace ThoughtWorks.QRCode.Properties
         }
 
         /// <summary>
-        /// 把结果提供给.net_core版本
+        /// TODO:把结果提供给.net_core版本
         /// </summary>
         public static void Save()
         {
