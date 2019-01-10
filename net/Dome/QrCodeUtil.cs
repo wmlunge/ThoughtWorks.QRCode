@@ -21,9 +21,15 @@ namespace Dome
         {
             var qrCodeEncoder = new QRCodeEncoder();
             qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-            qrCodeEncoder.QRCodeScale = 4;
-            qrCodeEncoder.QRCodeVersion = 5;
             qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
+            for (int v = 0; v < 50; v++)
+                for (int s = 0; s < 3; s++)
+                {
+                    qrCodeEncoder.QRCodeVersion = v;
+                    qrCodeEncoder.QRCodeScale = s;
+                    Console.WriteLine("v" + v + ",s" + s);
+                    qrCodeEncoder.Encode(text);
+                }
             return qrCodeEncoder.Encode(text);
         }
 
