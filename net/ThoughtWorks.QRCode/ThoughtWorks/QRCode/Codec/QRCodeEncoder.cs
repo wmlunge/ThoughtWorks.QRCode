@@ -405,8 +405,8 @@
             sbyte[] numArray11 = new sbyte[15];
             sbyte[] numArray12 = new sbyte[1];
             sbyte[] numArray13 = new sbyte[0x80];
-            try
-            {
+            //try
+            //{
                 name = "qrv" + Convert.ToString(this.qrcodeVersion) + "_" + Convert.ToString(num7);
                 stream = new MemoryStream(ResourceMap.Get(name));
                 stream2 = new BufferedStream(stream);
@@ -419,12 +419,12 @@
                 SystemUtils.ReadInput(stream2, numArray13, 0, numArray13.Length);
                 stream2.Close();
                 stream.Close();
-            }
-            catch (Exception exception1)
-            {
-                exception = exception1;
-                SystemUtils.WriteStackTrace(exception, Console.Error);
-            }
+            //}
+            //catch (Exception exception1)
+            //{
+            //    exception = exception1;
+            //    SystemUtils.WriteStackTrace(exception, Console.Error);
+            //}
             sbyte num12 = 1;
             for (sbyte i = 1; i < 0x80; i = (sbyte)(i + 1))
             {
