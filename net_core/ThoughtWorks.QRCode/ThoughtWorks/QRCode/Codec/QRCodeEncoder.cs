@@ -442,20 +442,20 @@
             int num15 = (4 * this.qrcodeVersion) + 0x11;
             int num16 = num15 * num15;
             sbyte[] numArray17 = new sbyte[num16 + num15];
-            try
-            {
+            //try
+            //{
                 name = "qrvfr" + Convert.ToString(this.qrcodeVersion);
                 stream = new MemoryStream(ResourceMap.Get(name));
                 stream2 = new BufferedStream(stream);
                 SystemUtils.ReadInput(stream2, numArray17, 0, numArray17.Length);
                 stream2.Close();
                 stream.Close();
-            }
-            catch (Exception exception2)
-            {
-                exception = exception2;
-                SystemUtils.WriteStackTrace(exception, Console.Error);
-            }
+            //}
+            //catch (Exception exception2)
+            //{
+            //    exception = exception2;
+            //    SystemUtils.WriteStackTrace(exception, Console.Error);
+            //}
             if (num6 <= (num8 - 4))
             {
                 data[index] = 0;

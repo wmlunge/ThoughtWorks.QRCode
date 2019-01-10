@@ -15,20 +15,12 @@ namespace ThoughtWorks.QRCode.Demo
         /// </summary>
         public static Bitmap Encode(string text)
         {
-            try
-            {
-                var qrCodeEncoder = new QRCodeEncoder();
-                qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-                qrCodeEncoder.QRCodeScale = 4;
-                qrCodeEncoder.QRCodeVersion = 5;
-                qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
-                return qrCodeEncoder.Encode(text);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
-            }
+            var qrCodeEncoder = new QRCodeEncoder();
+            qrCodeEncoder.QRCodeVersion = 5;
+            qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+            qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
+            qrCodeEncoder.QRCodeScale = 4;
+            return qrCodeEncoder.Encode(text);
         }
 
         /// <summary>
@@ -36,17 +28,7 @@ namespace ThoughtWorks.QRCode.Demo
         /// </summary>
         public static void Create(string text, string path)
         {
-            try
-            {
-                var image = Encode(text);
-                if (image == null)
-                    return;
-                image.Save(path);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            Encode(text).Save(path);
         }
 
         /// <summary>
@@ -54,17 +36,9 @@ namespace ThoughtWorks.QRCode.Demo
         /// </summary>
         public static string Decode(Bitmap image)
         {
-            try
-            {
-                var qrCodeBitmapImage = new QRCodeBitmapImage(image);
-                var qrCodeDecoder = new QRCodeDecoder();
-                return qrCodeDecoder.decode(qrCodeBitmapImage); ;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return "#";
-            }
+            var qrCodeBitmapImage = new QRCodeBitmapImage(image);
+            var qrCodeDecoder = new QRCodeDecoder();
+            return qrCodeDecoder.decode(qrCodeBitmapImage); ;
         }
 
         /// <summary>
@@ -76,9 +50,9 @@ namespace ThoughtWorks.QRCode.Demo
         }
 
         /// <summary>
-        /// 枚举资源
+        /// 编码测试
         /// </summary>
-        public static void ResourceEnum()
+        public static void EncodeTest()
         {
             var qrCodeEncoder = new QRCodeEncoder();
             for (int version = 0; version < 50; version++)

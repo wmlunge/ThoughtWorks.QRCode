@@ -6,6 +6,12 @@ namespace ThoughtWorks.QRCode.Demo
     {
         static void Main(string[] args)
         {
+            //获取资源
+            //QrCodeUtil.SaveResource();
+
+            //编码测试
+            QrCodeUtil.EncodeTest();
+
             //var path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             //var qr = QrCodeUtil.Encode("Hello World!");
             //qr.Save(path);
@@ -14,9 +20,6 @@ namespace ThoughtWorks.QRCode.Demo
             //path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             //QrCodeUtil.Create("中国智造，惠及全球！", path);
             //Console.WriteLine(QrCodeUtil.Decode(path));
-
-            //测试资源
-            QrCodeUtil.ResourceEnum();
 
             Console.WriteLine("Press enter to exit...");
             Console.ReadLine();

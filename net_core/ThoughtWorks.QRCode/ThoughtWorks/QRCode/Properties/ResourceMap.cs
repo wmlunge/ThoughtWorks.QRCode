@@ -13,17 +13,14 @@ namespace ThoughtWorks.QRCode.Properties
         static ResourceMap()
         {
             //TODO:从.net版本中获取bytes并存储到这里
+            var lines = File.ReadAllLines("Base64s.txt", Encoding.ASCII);
+            for (int index = 0; index < lines.Length; index += 2)
+                mMap.Add(lines[index], lines[index + 1]);
         }
 
         public static byte[] Get(string name)
         {
-            if (mMap.ContainsKey(name))
-                return Convert.FromBase64String(mMap[name]);
-
-            //.net core的ResourceManager不会用，不好用？
-            var bytes = (byte[])Resources.ResourceManager.GetObject(name);
-
-            return bytes;
+            return Convert.FromBase64String(mMap[name]);
         }
     }
 }
