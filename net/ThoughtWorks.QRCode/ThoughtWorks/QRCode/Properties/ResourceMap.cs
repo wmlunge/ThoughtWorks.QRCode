@@ -13,9 +13,12 @@ namespace ThoughtWorks.QRCode.Properties
         static string mPath = "Base64s.txt";
         static ResourceMap()
         {
-            var lines = File.ReadAllLines(mPath);
-            for (int index = 0; index < lines.Length; index += 2)
-                mMapNameBase64.Add(lines[index], lines[index + 1]);
+            if (File.Exists(mPath))
+            {
+                var lines = File.ReadAllLines(mPath, Encoding.ASCII);
+                for (int index = 0; index < lines.Length; index += 2)
+                    mMapNameBase64.Add(lines[index], lines[index + 1]);
+            }
         }
 
         public static byte[] Get(string name)
@@ -25,6 +28,7 @@ namespace ThoughtWorks.QRCode.Properties
 
             var bytes = (byte[])Resources.ResourceManager.GetObject(name);
             var base64 = Convert.ToBase64String(bytes);
+            mMapNameBase64.Add(name, base64);
             //TODO:把结果添加到Map中，提供给.net_core版本
             File.AppendAllLines(mPath, new string[] { name, base64 }, Encoding.ASCII);
             Console.WriteLine("//TODO:把结果添加到Map中，提供给.net_core版本");

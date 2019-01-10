@@ -73,4 +73,9 @@
     <Compile Include="ThoughtWorks\QRCode\ExceptionHandler\DecodingFailedException.cs" />
     <EmbeddedResource Include="ThoughtWorks.QRCode.Properties.Resources.resources" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base64s.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
