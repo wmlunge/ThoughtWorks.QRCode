@@ -29,9 +29,9 @@
         {
             long num = QRCodeImageReader.DECIMAL_POINT;
             Point point = new Point();
-            int num2 = (moveX == 0) ? 0 : ((this.modulePitch * moveX) >> ((int) num));
-            int num3 = (moveY == 0) ? 0 : ((this.modulePitch * moveY) >> ((int) num));
-            point.translate(((num2 * this.cos) - (num3 * this.sin)) >> ((int) num), ((num2 * this.sin) + (num3 * this.cos)) >> ((int) num));
+            int num2 = (moveX == 0) ? 0 : ((this.modulePitch * moveX) >> ((int)num));
+            int num3 = (moveY == 0) ? 0 : ((this.modulePitch * moveY) >> ((int)num));
+            point.translate(((num2 * this.cos) - (num3 * this.sin)) >> ((int)num), ((num2 * this.sin) + (num3 * this.cos)) >> ((int)num));
             point.translate(this.origin.X, this.origin.Y);
             return point;
         }
@@ -59,14 +59,14 @@
 
         public virtual Point Origin
         {
-            set => 
-                (this.origin = value);
+            set =>
+                this.origin = value;
         }
 
         public virtual int ModulePitch
         {
-            set => 
-                (this.modulePitch = value);
+            set =>
+                this.modulePitch = value;
         }
     }
 }

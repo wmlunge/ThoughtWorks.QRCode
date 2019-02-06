@@ -31,10 +31,10 @@
             return QRCodeUtility.sqrt(((this.x - x) * (this.x - x)) + ((this.y - y) * (this.y - y)));
         }
 
-        public bool equals(Point compare) => 
+        public bool equals(Point compare) =>
             ((this.x == compare.x) && (this.y == compare.y));
 
-        public static Point getCenter(Point p1, Point p2) => 
+        public static Point getCenter(Point p1, Point p2) =>
             new Point((p1.X + p2.X) / 2, (p1.Y + p2.Y) / 2);
 
         public virtual void set_Renamed(int x, int y)
@@ -43,7 +43,7 @@
             this.y = y;
         }
 
-        public override string ToString() => 
+        public override string ToString() =>
             ("(" + Convert.ToString(this.x) + "," + Convert.ToString(this.y) + ")");
 
         public virtual void translate(int dx, int dy)
@@ -54,18 +54,18 @@
 
         public virtual int X
         {
-            get => 
+            get =>
                 this.x;
-            set => 
-                (this.x = value);
+            set =>
+                this.x = value;
         }
 
         public virtual int Y
         {
-            get => 
+            get =>
                 this.y;
-            set => 
-                (this.y = value);
+            set =>
+                this.y = value;
         }
     }
 }

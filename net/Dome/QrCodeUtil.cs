@@ -54,14 +54,6 @@ namespace Dome
         }
 
         /// <summary>
-        /// 存储资源
-        /// </summary>
-        public static void SaveResource()
-        {
-            ThoughtWorks.QRCode.Properties.ResourceMap.Save();
-        }
-
-        /// <summary>
         /// 编码测试
         /// </summary>
         public static void EncodeTest()

@@ -271,7 +271,7 @@
             int numErrors = 0x7fffffff;
             for (int i = 0; i < list.Count; i++)
             {
-                result = (DecodeResult) list[i];
+                result = (DecodeResult)list[i];
                 if (result.NumErrors < numErrors)
                 {
                     numErrors = result.NumErrors;
@@ -282,7 +282,7 @@
             canvas.println("Reporting #" + num + " that,");
             canvas.println("corrected minimum errors (" + numErrors + ")");
             canvas.println("Decoding finished.");
-            return ((DecodeResult) list[num]).DecodedBytes;
+            return ((DecodeResult)list[num]).DecodedBytes;
         }
 
         internal virtual sbyte[] getDecodedByteArray(int[] blocks, int version, int numErrorCorrectionCode)
@@ -336,10 +336,10 @@
 
         public static DebugCanvas Canvas
         {
-            get => 
+            get =>
                 canvas;
-            set => 
-                (canvas = value);
+            set =>
+                canvas = value;
         }
 
         internal virtual Point[] AdjustPoints
@@ -368,7 +368,7 @@
                 Point[] pointArray = new Point[list.Count];
                 for (int k = 0; k < pointArray.Length; k++)
                 {
-                    pointArray[k] = (Point) list[k];
+                    pointArray[k] = (Point)list[k];
                 }
                 return pointArray;
             }

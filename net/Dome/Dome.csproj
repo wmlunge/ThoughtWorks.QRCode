@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj">
-      <Project>{9c6e0fff-a3cc-4fd2-bfde-be652c000417}</Project>
+      <Project>{c65eb8c0-6790-43f5-9d86-43d6a2326324}</Project>
       <Name>ThoughtWorks.QRCode</Name>
     </ProjectReference>
   </ItemGroup>
