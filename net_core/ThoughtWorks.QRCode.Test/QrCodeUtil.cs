@@ -48,27 +48,5 @@ namespace ThoughtWorks.QRCode.Test
         {
             return Decode(new Bitmap(path));
         }
-
-        /// <summary>
-        /// 编码测试
-        /// </summary>
-        public static void EncodeTest()
-        {
-            var qrCodeEncoder = new QRCodeEncoder();
-            for (int version = 0; version < 50; version++)
-            {
-                for (int mode = 0; mode < 4; mode++)
-                    for (int error = 0; error < 3; error++)
-                        for (int scale = 0; scale < 3; scale++)
-                        {
-                            qrCodeEncoder.QRCodeVersion = version;
-                            qrCodeEncoder.QRCodeEncodeMode = (QRCodeEncoder.ENCODE_MODE)mode;
-                            qrCodeEncoder.QRCodeErrorCorrect = (QRCodeEncoder.ERROR_CORRECTION)error;
-                            qrCodeEncoder.QRCodeScale = scale;
-                            Console.WriteLine("version: {0},mode: {1},error: {2},scale: {3}", version, mode, error, scale);
-                            qrCodeEncoder.Encode("Hello");
-                        }
-            }
-        }
     }
 }
