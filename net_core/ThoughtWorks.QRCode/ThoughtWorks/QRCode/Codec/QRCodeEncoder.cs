@@ -644,7 +644,7 @@
         {
             if (QRCodeUtility.IsUniCode(content))
             {
-                return this.Encode(content, Encoding.GetEncoding("gb2312"));
+                return this.Encode(content, Encoding.UTF8);
             }
             return this.Encode(content, Encoding.ASCII);
         }

@@ -179,7 +179,7 @@
             sbyte[] src = this.decodeBytes(qrCodeImage);
             byte[] dst = new byte[src.Length];
             Buffer.BlockCopy(src, 0, dst, 0, dst.Length);
-            return Encoding.GetEncoding("gb2312").GetString(dst);
+            return Encoding.UTF8.GetString(dst);
         }
 
         public virtual string decode(QRCodeImage qrCodeImage, Encoding encoding)
