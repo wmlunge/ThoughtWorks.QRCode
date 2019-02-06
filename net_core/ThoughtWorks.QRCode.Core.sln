@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode", "ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj", "{8E05E3C1-768D-425E-BB94-EA05C74BD03C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Test", "ThoughtWorks.QRCode.Demo\ThoughtWorks.QRCode.Test.csproj", "{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Test", "ThoughtWorks.QRCode.Test\ThoughtWorks.QRCode.Test.csproj", "{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
