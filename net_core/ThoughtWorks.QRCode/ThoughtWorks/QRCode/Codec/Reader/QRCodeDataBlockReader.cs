@@ -8,17 +8,17 @@
 
     public class QRCodeDataBlockReader
     {
-        internal int bitPointer = 7;
-        internal int blockPointer = 0;
-        internal int[] blocks;
-        internal DebugCanvas canvas;
-        internal int dataLength = 0;
-        internal int dataLengthMode;
-        private const int MODE_8BIT_BYTE = 4;
-        private const int MODE_KANJI = 8;
         private const int MODE_NUMBER = 1;
         private const int MODE_ROMAN_AND_NUMBER = 2;
+        private const int MODE_8BIT_BYTE = 4;
+        private const int MODE_KANJI = 8;
+        internal int[] blocks;
+        internal int dataLengthMode;
+        internal int blockPointer = 0;
+        internal int bitPointer = 7;
+        internal int dataLength = 0;
         internal int numErrorCorrectionCode;
+        internal DebugCanvas canvas;
         private int[][] sizeOfDataLengthInfo = new int[][] { new int[] { 10, 9, 8, 8 }, new int[] { 12, 11, 0x10, 10 }, new int[] { 14, 13, 0x10, 12 } };
 
         public QRCodeDataBlockReader(int[] blocks, int version, int numErrorCorrectionCode)
@@ -227,10 +227,10 @@
             int index = 0;
             string str = "";
             char[] chArray = new char[] { 
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 
-                'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+                'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
                 'W', 'X', 'Y', 'Z', ' ', '$', '%', '*', '+', '-', '.', '/', ':'
-             };
+            };
             do
             {
                 if (num > 1)
@@ -292,6 +292,18 @@
             return 8;
         }
 
+        internal virtual int NextMode
+        {
+            get
+            {
+                if (this.blockPointer > ((this.blocks.Length - this.numErrorCorrectionCode) - 2))
+                {
+                    return 0;
+                }
+                return this.getNextBits(4);
+            }
+        }
+
         public virtual sbyte[] DataByte
         {
             get
@@ -331,20 +343,20 @@
                             }
                             case 2:
                             {
-                                sbyte[] numArray2 = SystemUtils.ToSByteArray(SystemUtils.ToByteArray(this.getRomanAndFigureString(this.dataLength)));
-                                stream.Write(SystemUtils.ToByteArray(numArray2), 0, numArray2.Length);
+                                sbyte[] sbyteArray = SystemUtils.ToSByteArray(SystemUtils.ToByteArray(this.getRomanAndFigureString(this.dataLength)));
+                                stream.Write(SystemUtils.ToByteArray(sbyteArray), 0, sbyteArray.Length);
                                 break;
                             }
                             case 4:
                             {
-                                sbyte[] numArray3 = this.get8bitByteArray(this.dataLength);
-                                stream.Write(SystemUtils.ToByteArray(numArray3), 0, numArray3.Length);
+                                sbyte[] sbyteArray = this.get8bitByteArray(this.dataLength);
+                                stream.Write(SystemUtils.ToByteArray(sbyteArray), 0, sbyteArray.Length);
                                 break;
                             }
                             case 8:
                             {
-                                sbyte[] numArray4 = SystemUtils.ToSByteArray(SystemUtils.ToByteArray(this.getKanjiString(this.dataLength)));
-                                stream.Write(SystemUtils.ToByteArray(numArray4), 0, numArray4.Length);
+                                sbyte[] sbyteArray = SystemUtils.ToSByteArray(SystemUtils.ToByteArray(this.getKanjiString(this.dataLength)));
+                                stream.Write(SystemUtils.ToByteArray(sbyteArray), 0, sbyteArray.Length);
                                 break;
                             }
                         }
@@ -402,18 +414,6 @@
                             break;
                     }
                 }
-            }
-        }
-
-        internal virtual int NextMode
-        {
-            get
-            {
-                if (this.blockPointer > ((this.blocks.Length - this.numErrorCorrectionCode) - 2))
-                {
-                    return 0;
-                }
-                return this.getNextBits(4);
             }
         }
     }

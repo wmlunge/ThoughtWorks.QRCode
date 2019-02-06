@@ -6,8 +6,8 @@
     public class Line
     {
         internal int x1;
-        internal int x2;
         internal int y1;
+        internal int x2;
         internal int y2;
 
         public Line()
@@ -44,15 +44,11 @@
             return line;
         }
 
-        public virtual Point getP1()
-        {
-            return new Point(this.x1, this.y1);
-        }
+        public virtual Point getP1() => 
+            new Point(this.x1, this.y1);
 
-        public virtual Point getP2()
-        {
-            return new Point(this.x2, this.y2);
-        }
+        public virtual Point getP2() => 
+            new Point(this.x2, this.y2);
 
         public static bool isCross(Line line1, Line line2)
         {
@@ -70,10 +66,8 @@
             return false;
         }
 
-        public static bool isNeighbor(Line line1, Line line2)
-        {
-            return (((Math.Abs((int) (line1.getP1().X - line2.getP1().X)) < 2) && (Math.Abs((int) (line1.getP1().Y - line2.getP1().Y)) < 2)) && ((Math.Abs((int) (line1.getP2().X - line2.getP2().X)) < 2) && (Math.Abs((int) (line1.getP2().Y - line2.getP2().Y)) < 2)));
-        }
+        public static bool isNeighbor(Line line1, Line line2) => 
+            (((Math.Abs((int) (line1.getP1().X - line2.getP1().X)) < 2) && (Math.Abs((int) (line1.getP1().Y - line2.getP1().Y)) < 2)) && ((Math.Abs((int) (line1.getP2().X - line2.getP2().X)) < 2) && (Math.Abs((int) (line1.getP2().Y - line2.getP2().Y)) < 2)));
 
         public virtual void setLine(int x1, int y1, int x2, int y2)
         {
@@ -107,10 +101,8 @@
             this.y2 = y2;
         }
 
-        public override string ToString()
-        {
-            return ("(" + Convert.ToString(this.x1) + "," + Convert.ToString(this.y1) + ")-(" + Convert.ToString(this.x2) + "," + Convert.ToString(this.y2) + ")");
-        }
+        public override string ToString() => 
+            ("(" + Convert.ToString(this.x1) + "," + Convert.ToString(this.y1) + ")-(" + Convert.ToString(this.x2) + "," + Convert.ToString(this.y2) + ")");
 
         public virtual void translate(int dx, int dy)
         {
@@ -119,6 +111,12 @@
             this.x2 += dx;
             this.y2 += dy;
         }
+
+        public virtual bool Horizontal =>
+            (this.y1 == this.y2);
+
+        public virtual bool Vertical =>
+            (this.x1 == this.x2);
 
         public virtual Point Center
         {
@@ -129,14 +127,6 @@
             }
         }
 
-        public virtual bool Horizontal
-        {
-            get
-            {
-                return (this.y1 == this.y2);
-            }
-        }
-
         public virtual int Length
         {
             get
@@ -144,14 +134,6 @@
                 int num = Math.Abs((int) (this.x2 - this.x1));
                 int num2 = Math.Abs((int) (this.y2 - this.y1));
                 return QRCodeUtility.sqrt((num * num) + (num2 * num2));
-            }
-        }
-
-        public virtual bool Vertical
-        {
-            get
-            {
-                return (this.x1 == this.x2);
             }
         }
     }

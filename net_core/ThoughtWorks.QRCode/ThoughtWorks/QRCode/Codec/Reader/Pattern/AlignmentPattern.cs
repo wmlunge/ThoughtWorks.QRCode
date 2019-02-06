@@ -7,13 +7,13 @@
 
     public class AlignmentPattern
     {
+        internal const int RIGHT = 1;
         internal const int BOTTOM = 2;
+        internal const int LEFT = 3;
+        internal const int TOP = 4;
         internal static DebugCanvas canvas = QRCodeDecoder.Canvas;
         internal Point[][] center;
-        internal const int LEFT = 3;
         internal int patternDistance;
-        internal const int RIGHT = 1;
-        internal const int TOP = 4;
 
         internal AlignmentPattern(Point[][] center, int patternDistance)
         {
@@ -28,10 +28,8 @@
             return new AlignmentPattern(getCenter(image, finderPattern, logicalCenters), patternDistance);
         }
 
-        public virtual Point[][] getCenter()
-        {
-            return this.center;
-        }
+        public virtual Point[][] getCenter() => 
+            this.center;
 
         internal static Point[][] getCenter(bool[][] image, FinderPattern finderPattern, Point[][] logicalCenters)
         {
@@ -203,13 +201,8 @@
             return (!image[x][y] && image[nx][ny]);
         }
 
-        public virtual int LogicalDistance
-        {
-            get
-            {
-                return this.patternDistance;
-            }
-        }
+        public virtual int LogicalDistance =>
+            this.patternDistance;
     }
 }
 

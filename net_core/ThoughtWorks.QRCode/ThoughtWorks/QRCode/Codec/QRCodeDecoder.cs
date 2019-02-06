@@ -12,14 +12,14 @@
 
     public class QRCodeDecoder
     {
-        internal static DebugCanvas canvas = new DebugCanvasAdapter();
-        internal bool correctionSucceeded;
-        internal QRCodeImageReader imageReader;
-        internal ArrayList lastResults = ArrayList.Synchronized(new ArrayList(10));
-        internal int numLastCorrections;
-        internal int numTryDecode = 0;
         internal QRCodeSymbol qrCodeSymbol;
+        internal int numTryDecode = 0;
         internal ArrayList results = ArrayList.Synchronized(new ArrayList(10));
+        internal ArrayList lastResults = ArrayList.Synchronized(new ArrayList(10));
+        internal static DebugCanvas canvas = new DebugCanvasAdapter();
+        internal QRCodeImageReader imageReader;
+        internal int numLastCorrections;
+        internal bool correctionSucceeded;
 
         internal virtual int[] correctDataBlocks(int[] blocks)
         {
@@ -179,7 +179,7 @@
             sbyte[] src = this.decodeBytes(qrCodeImage);
             byte[] dst = new byte[src.Length];
             Buffer.BlockCopy(src, 0, dst, 0, dst.Length);
-            return Encoding.UTF8.GetString(dst);
+            return Encoding.GetEncoding("gb2312").GetString(dst);
         }
 
         public virtual string decode(QRCodeImage qrCodeImage, Encoding encoding)
@@ -271,7 +271,7 @@
             int numErrors = 0x7fffffff;
             for (int i = 0; i < list.Count; i++)
             {
-                result = (DecodeResult) list[i];
+                result = (DecodeResult)list[i];
                 if (result.NumErrors < numErrors)
                 {
                     numErrors = result.NumErrors;
@@ -282,7 +282,7 @@
             canvas.println("Reporting #" + num + " that,");
             canvas.println("corrected minimum errors (" + numErrors + ")");
             canvas.println("Decoding finished.");
-            return ((DecodeResult) list[num]).DecodedBytes;
+            return ((DecodeResult)list[num]).DecodedBytes;
         }
 
         internal virtual sbyte[] getDecodedByteArray(int[] blocks, int version, int numErrorCorrectionCode)
@@ -334,6 +334,14 @@
             return numArray;
         }
 
+        public static DebugCanvas Canvas
+        {
+            get =>
+                canvas;
+            set =>
+                canvas = value;
+        }
+
         internal virtual Point[] AdjustPoints
         {
             get
@@ -360,30 +368,18 @@
                 Point[] pointArray = new Point[list.Count];
                 for (int k = 0; k < pointArray.Length; k++)
                 {
-                    pointArray[k] = (Point) list[k];
+                    pointArray[k] = (Point)list[k];
                 }
                 return pointArray;
             }
         }
 
-        public static DebugCanvas Canvas
-        {
-            get
-            {
-                return canvas;
-            }
-            set
-            {
-                canvas = value;
-            }
-        }
-
         internal class DecodeResult
         {
+            internal int numCorrections;
             internal bool correctionSucceeded;
             internal sbyte[] decodedBytes;
             private QRCodeDecoder enclosingInstance;
-            internal int numCorrections;
 
             public DecodeResult(QRCodeDecoder enclosingInstance, sbyte[] decodedBytes, int numErrors, bool correctionSucceeded)
             {
@@ -398,37 +394,17 @@
                 this.enclosingInstance = enclosingInstance;
             }
 
-            public virtual bool CorrectionSucceeded
-            {
-                get
-                {
-                    return this.correctionSucceeded;
-                }
-            }
+            public virtual sbyte[] DecodedBytes =>
+                this.decodedBytes;
 
-            public virtual sbyte[] DecodedBytes
-            {
-                get
-                {
-                    return this.decodedBytes;
-                }
-            }
+            public virtual int NumErrors =>
+                this.numCorrections;
 
-            public QRCodeDecoder Enclosing_Instance
-            {
-                get
-                {
-                    return this.enclosingInstance;
-                }
-            }
+            public virtual bool CorrectionSucceeded =>
+                this.correctionSucceeded;
 
-            public virtual int NumErrors
-            {
-                get
-                {
-                    return this.numCorrections;
-                }
-            }
+            public QRCodeDecoder Enclosing_Instance =>
+                this.enclosingInstance;
         }
     }
 }

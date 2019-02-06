@@ -6,9 +6,9 @@
     {
         int getPixel(int x, int y);
 
-        int Height { get; }
-
         int Width { get; }
+
+        int Height { get; }
     }
 }
 

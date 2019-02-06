@@ -12,26 +12,14 @@
             this.image = image;
         }
 
-        public virtual int getPixel(int x, int y)
-        {
-            return this.image.GetPixel(x, y).ToArgb();
-        }
+        public virtual int getPixel(int x, int y) => 
+            this.image.GetPixel(x, y).ToArgb();
 
-        public virtual int Height
-        {
-            get
-            {
-                return this.image.Height;
-            }
-        }
+        public virtual int Width =>
+            this.image.Width;
 
-        public virtual int Width
-        {
-            get
-            {
-                return this.image.Width;
-            }
-        }
+        public virtual int Height =>
+            this.image.Height;
     }
 }
 

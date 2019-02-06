@@ -10,12 +10,12 @@
 
     public class QRCodeImageReader
     {
-        internal bool[][] bitmap;
-        internal DebugCanvas canvas = QRCodeDecoder.Canvas;
-        public static int DECIMAL_POINT = 0x15;
         public const bool POINT_DARK = true;
         public const bool POINT_LIGHT = false;
+        internal DebugCanvas canvas = QRCodeDecoder.Canvas;
+        public static int DECIMAL_POINT = 0x15;
         internal SamplingGrid samplingGrid;
+        internal bool[][] bitmap;
 
         internal virtual bool[][] applyCrossMaskingMedianFilter(bool[][] image, int threshold)
         {
@@ -114,11 +114,11 @@
                 while (num7 < num)
                 {
                     numArray[num7][num6][0] = 0xff;
-                    for (int m = 0; m < num3; m++)
+                    for (int k = 0; k < num3; k++)
                     {
-                        for (int n = 0; n < num2; n++)
+                        for (int m = 0; m < num2; m++)
                         {
-                            int num10 = image[(num2 * num7) + n][(num3 * num6) + m];
+                            int num10 = image[(num2 * num7) + m][(num3 * num6) + k];
                             if (num10 < numArray[num7][num6][0])
                             {
                                 numArray[num7][num6][0] = num10;
@@ -257,9 +257,9 @@
             for (int i = 0; i < length; i++)
             {
                 string str2 = "";
-                for (int k = 0; k < length; k++)
+                for (int j = 0; j < length; j++)
                 {
-                    str2 = str2 + alignmentPattern.getCenter()[k][i].ToString();
+                    str2 = str2 + alignmentPattern.getCenter()[j][i].ToString();
                 }
                 this.canvas.println(str2);
             }
@@ -513,11 +513,11 @@
 
         private class ModulePitch
         {
-            public int bottom;
-            private QRCodeImageReader enclosingInstance;
-            public int left;
-            public int right;
             public int top;
+            public int left;
+            public int bottom;
+            public int right;
+            private QRCodeImageReader enclosingInstance;
 
             public ModulePitch(QRCodeImageReader enclosingInstance)
             {
@@ -529,13 +529,8 @@
                 this.enclosingInstance = enclosingInstance;
             }
 
-            public QRCodeImageReader Enclosing_Instance
-            {
-                get
-                {
-                    return this.enclosingInstance;
-                }
-            }
+            public QRCodeImageReader Enclosing_Instance =>
+                this.enclosingInstance;
         }
     }
 }
