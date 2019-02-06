@@ -25,11 +25,11 @@ ThoughtWorks.QRCode很好用，但是该类库不支持.net core
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ThoughtWorks.QRCode.Properties.Resources.resources" />
+    <None Remove="Properties.Resources.resources" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="ThoughtWorks.QRCode.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties.Resources.resources" />
   </ItemGroup>
 
   <ItemGroup>
