@@ -3,7 +3,7 @@ using System.Drawing;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 
-namespace ThoughtWorks.QRCode.Demo
+namespace ThoughtWorks.QRCode.Test
 {
     /// <summary>
     /// 二维码工具

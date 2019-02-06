@@ -1,7 +1,7 @@
 ﻿using System;
 using ThoughtWorks.QRCode.Properties;
 
-namespace ThoughtWorks.QRCode.Demo
+namespace ThoughtWorks.QRCode.Test
 {
     class Program
     {
