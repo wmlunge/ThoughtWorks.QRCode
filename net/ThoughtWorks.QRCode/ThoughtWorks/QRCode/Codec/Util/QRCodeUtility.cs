@@ -17,10 +17,8 @@
             return encoding.GetString(characters);
         }
 
-        public static string FromUnicodeByteArray(byte[] characters)
-        {
-            return Encoding.UTF8.GetString(characters);
-        }
+        public static string FromUnicodeByteArray(byte[] characters) => 
+            Encoding.GetEncoding("gb2312").GetString(characters);
 
         public static bool IsUnicode(byte[] byteData)
         {
@@ -58,10 +56,8 @@
             return num2;
         }
 
-        public static byte[] UnicodeStringToByteArray(string str)
-        {
-            return Encoding.UTF8.GetBytes(str);
-        }
+        public static byte[] UnicodeStringToByteArray(string str) => 
+            Encoding.GetEncoding("gb2312").GetBytes(str);
     }
 }
 

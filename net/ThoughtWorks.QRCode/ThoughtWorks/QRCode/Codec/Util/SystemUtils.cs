@@ -44,10 +44,8 @@
             return num;
         }
 
-        public static byte[] ToByteArray(string sourceString)
-        {
-            return Encoding.UTF8.GetBytes(sourceString);
-        }
+        public static byte[] ToByteArray(string sourceString) => 
+            Encoding.UTF8.GetBytes(sourceString);
 
         public static byte[] ToByteArray(object[] tempObjectArray)
         {
@@ -77,15 +75,11 @@
             return buffer;
         }
 
-        public static char[] ToCharArray(byte[] byteArray)
-        {
-            return Encoding.UTF8.GetChars(byteArray);
-        }
+        public static char[] ToCharArray(byte[] byteArray) => 
+            Encoding.UTF8.GetChars(byteArray);
 
-        public static char[] ToCharArray(sbyte[] sByteArray)
-        {
-            return Encoding.UTF8.GetChars(ToByteArray(sByteArray));
-        }
+        public static char[] ToCharArray(sbyte[] sByteArray) => 
+            Encoding.UTF8.GetChars(ToByteArray(sByteArray));
 
         public static sbyte[] ToSByteArray(byte[] byteArray)
         {
@@ -110,10 +104,8 @@
             return ((number >> bits) + (((int) 2) << ~bits));
         }
 
-        public static int URShift(int number, long bits)
-        {
-            return URShift(number, (int) bits);
-        }
+        public static int URShift(int number, long bits) => 
+            URShift(number, (int) bits);
 
         public static long URShift(long number, int bits)
         {
@@ -124,10 +116,8 @@
             return ((number >> bits) + (((long) 2L) << ~bits));
         }
 
-        public static long URShift(long number, long bits)
-        {
-            return URShift(number, (int) bits);
-        }
+        public static long URShift(long number, long bits) => 
+            URShift(number, (int) bits);
 
         public static void WriteStackTrace(Exception throwable, TextWriter stream)
         {

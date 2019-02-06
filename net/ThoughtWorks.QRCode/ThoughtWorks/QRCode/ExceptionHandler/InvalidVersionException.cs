@@ -12,13 +12,8 @@
             this.message = message;
         }
 
-        public override string Message
-        {
-            get
-            {
-                return this.message;
-            }
-        }
+        public override string Message =>
+            this.message;
     }
 }
 

@@ -58,10 +58,8 @@
             return (replaceString(replaceString(replaceString(removeString(removeString(str, "MATMSG:"), ";"), "TO:", "MAILTO:"), "SUB:", ch + "SUBJECT:"), "BODY:", ch + "BODY:") + ch);
         }
 
-        private static string removeString(string s, string s1)
-        {
-            return replaceString(s, s1, "");
-        }
+        private static string removeString(string s, string s1) => 
+            replaceString(s, s1, "");
 
         private static string replaceString(string s, string s1, string s2)
         {

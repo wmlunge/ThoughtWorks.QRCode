@@ -5,10 +5,10 @@
 
     public class Axis
     {
+        internal int sin;
         internal int cos;
         internal int modulePitch;
         internal Point origin;
-        internal int sin;
 
         public Axis(int[] angle, int modulePitch)
         {
@@ -57,20 +57,16 @@
             return this.translate(moveX, moveY);
         }
 
-        public virtual int ModulePitch
-        {
-            set
-            {
-                this.modulePitch = value;
-            }
-        }
-
         public virtual Point Origin
         {
-            set
-            {
-                this.origin = value;
-            }
+            set => 
+                (this.origin = value);
+        }
+
+        public virtual int ModulePitch
+        {
+            set => 
+                (this.modulePitch = value);
         }
     }
 }

@@ -9,20 +9,20 @@
 
     public class FinderPattern
     {
-        internal static DebugCanvas canvas = QRCodeDecoder.Canvas;
-        internal Point[] center;
-        public const int DL = 2;
-        internal int[] moduleSize;
-        internal int[] sincos;
         public const int UL = 0;
         public const int UR = 1;
-        internal int version;
+        public const int DL = 2;
         internal static readonly int[] VersionInfoBit = new int[] { 
-            0x7c94, 0x85bc, 0x9a99, 0xa4d3, 0xbbf6, 0xc762, 0xd847, 0xe60d, 0xf928, 0x10b78, 0x1145d, 0x12a17, 0x13532, 0x149a6, 0x15683, 0x168c9, 
-            0x177ec, 0x18ec4, 0x191e1, 0x1afab, 0x1b08e, 0x1cc1a, 0x1d33f, 0x1ed75, 0x1f250, 0x209d5, 0x216f0, 0x228ba, 0x2379f, 0x24b0b, 0x2542e, 0x26a64, 
+            0x7c94, 0x85bc, 0x9a99, 0xa4d3, 0xbbf6, 0xc762, 0xd847, 0xe60d, 0xf928, 0x10b78, 0x1145d, 0x12a17, 0x13532, 0x149a6, 0x15683, 0x168c9,
+            0x177ec, 0x18ec4, 0x191e1, 0x1afab, 0x1b08e, 0x1cc1a, 0x1d33f, 0x1ed75, 0x1f250, 0x209d5, 0x216f0, 0x228ba, 0x2379f, 0x24b0b, 0x2542e, 0x26a64,
             0x27541, 0x28c69
-         };
+        };
+        internal static DebugCanvas canvas = QRCodeDecoder.Canvas;
+        internal Point[] center;
+        internal int version;
+        internal int[] sincos;
         internal int[] width;
+        internal int[] moduleSize;
 
         internal FinderPattern(Point[] center, int version, int[] sincos, int[] width, int[] moduleSize)
         {
@@ -342,10 +342,8 @@
             return lineArray;
         }
 
-        public virtual int[] getAngle()
-        {
-            return this.sincos;
-        }
+        public virtual int[] getAngle() => 
+            this.sincos;
 
         internal static int[] getAngle(Point[] centers)
         {
@@ -412,10 +410,8 @@
             return new int[] { (((point2.Y - point.Y) << QRCodeImageReader.DECIMAL_POINT) / length), (((point2.X - point.X) << QRCodeImageReader.DECIMAL_POINT) / length) };
         }
 
-        public virtual Point[] getCenter()
-        {
-            return this.center;
-        }
+        public virtual Point[] getCenter() => 
+            this.center;
 
         public virtual Point getCenter(int position)
         {
@@ -467,15 +463,11 @@
             return points;
         }
 
-        public virtual int getModuleSize()
-        {
-            return this.moduleSize[0];
-        }
+        public virtual int getModuleSize() => 
+            this.moduleSize[0];
 
-        public virtual int getModuleSize(int place)
-        {
-            return this.moduleSize[place];
-        }
+        public virtual int getModuleSize(int place) => 
+            this.moduleSize[place];
 
         internal static Point getPointAtSide(Point[] points, int side1, int side2)
         {
@@ -621,10 +613,8 @@
             return 0;
         }
 
-        public virtual int getWidth(int position)
-        {
-            return this.width[position];
-        }
+        public virtual int getWidth(int position) => 
+            this.width[position];
 
         internal static int[] getWidth(bool[][] image, Point[] centers, int[] sincos)
         {
@@ -700,21 +690,11 @@
             return pointArray;
         }
 
-        public virtual int SqrtNumModules
-        {
-            get
-            {
-                return (0x11 + (4 * this.version));
-            }
-        }
+        public virtual int Version =>
+            this.version;
 
-        public virtual int Version
-        {
-            get
-            {
-                return this.version;
-            }
-        }
+        public virtual int SqrtNumModules =>
+            (0x11 + (4 * this.version));
     }
 }
 

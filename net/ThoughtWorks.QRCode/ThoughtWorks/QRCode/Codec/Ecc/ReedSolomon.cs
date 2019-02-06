@@ -4,19 +4,19 @@
 
     public class ReedSolomon
     {
-        internal bool correctionSucceeded = true;
-        internal int[] ErasureLocs = new int[0x100];
-        internal int[] ErrorLocs = new int[0x100];
+        internal int[] y;
         internal int[] gexp = new int[0x200];
         internal int[] glog = new int[0x100];
-        internal int[] Lambda;
-        internal int MAXDEG;
-        internal int NErasures = 0;
-        internal int NErrors;
         internal int NPAR;
-        internal int[] Omega;
+        internal int MAXDEG;
         internal int[] synBytes;
-        internal int[] y;
+        internal int[] Lambda;
+        internal int[] Omega;
+        internal int[] ErrorLocs = new int[0x100];
+        internal int NErrors;
+        internal int[] ErasureLocs = new int[0x100];
+        internal int NErasures = 0;
+        internal bool correctionSucceeded = true;
 
         public ReedSolomon(int[] source, int NPAR)
         {
@@ -167,10 +167,8 @@
             }
         }
 
-        internal virtual int ginv(int elt)
-        {
-            return this.gexp[0xff - this.glog[elt]];
-        }
+        internal virtual int ginv(int elt) => 
+            this.gexp[0xff - this.glog[elt]];
 
         internal virtual int gmult(int a, int b)
         {
@@ -358,21 +356,11 @@
             }
         }
 
-        public virtual bool CorrectionSucceeded
-        {
-            get
-            {
-                return this.correctionSucceeded;
-            }
-        }
+        public virtual bool CorrectionSucceeded =>
+            this.correctionSucceeded;
 
-        public virtual int NumCorrectedErrors
-        {
-            get
-            {
-                return this.NErrors;
-            }
-        }
+        public virtual int NumCorrectedErrors =>
+            this.NErrors;
     }
 }
 

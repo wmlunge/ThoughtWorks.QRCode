@@ -9,24 +9,24 @@
 
     public class QRCodeSymbol
     {
-        internal Point[][] alignmentPattern;
-        internal int dataCapacity;
-        internal int errorCollectionLevel;
-        internal int height;
-        internal int maskPattern;
-        internal bool[][] moduleMatrix;
-        internal int[][] numErrorCollectionCode = new int[][] { 
-            new int[] { 7, 10, 13, 0x11 }, new int[] { 10, 0x10, 0x16, 0x1c }, new int[] { 15, 0x1a, 0x24, 0x2c }, new int[] { 20, 0x24, 0x34, 0x40 }, new int[] { 0x1a, 0x30, 0x48, 0x58 }, new int[] { 0x24, 0x40, 0x60, 0x70 }, new int[] { 40, 0x48, 0x6c, 130 }, new int[] { 0x30, 0x58, 0x84, 0x9c }, new int[] { 60, 110, 160, 0xc0 }, new int[] { 0x48, 130, 0xc0, 0xe0 }, new int[] { 80, 150, 0xe0, 0x108 }, new int[] { 0x60, 0xb0, 260, 0x134 }, new int[] { 0x68, 0xc6, 0x120, 0x160 }, new int[] { 120, 0xd8, 320, 0x180 }, new int[] { 0x84, 240, 360, 0x1b0 }, new int[] { 0x90, 280, 0x198, 480 }, 
-            new int[] { 0xa8, 0x134, 0x1c0, 0x214 }, new int[] { 180, 0x152, 0x1f8, 0x24c }, new int[] { 0xc4, 0x16c, 0x222, 650 }, new int[] { 0xe0, 0x1a0, 600, 700 }, new int[] { 0xe0, 0x1ba, 0x284, 750 }, new int[] { 0xfc, 0x1dc, 690, 0x330 }, new int[] { 270, 0x1f8, 750, 900 }, new int[] { 300, 560, 810, 960 }, new int[] { 0x138, 0x24c, 870, 0x41a }, new int[] { 0x150, 0x284, 0x3b8, 0x456 }, new int[] { 360, 700, 0x3fc, 0x4b0 }, new int[] { 390, 0x2d8, 0x41a, 0x4ec }, new int[] { 420, 0x310, 0x474, 0x546 }, new int[] { 450, 0x32c, 0x4b0, 0x5a0 }, new int[] { 480, 0x364, 0x50a, 0x5fa }, new int[] { 510, 0x39c, 0x546, 0x654 }, 
-            new int[] { 540, 980, 0x5a0, 0x6ae }, new int[] { 570, 0x40c, 0x5fa, 0x708 }, new int[] { 570, 0x428, 0x636, 0x762 }, new int[] { 600, 0x460, 0x690, 0x7bc }, new int[] { 630, 0x4b4, 0x6ea, 0x834 }, new int[] { 660, 0x4ec, 0x744, 0x8ac }, new int[] { 720, 0x524, 0x79e, 0x906 }, new int[] { 750, 0x55c, 0x7f8, 0x97e }
-         };
-        internal int[][] numRSBlocks = new int[][] { 
-            new int[] { 1, 1, 1, 1 }, new int[] { 1, 1, 1, 1 }, new int[] { 1, 1, 2, 2 }, new int[] { 1, 2, 2, 4 }, new int[] { 1, 2, 4, 4 }, new int[] { 2, 4, 4, 4 }, new int[] { 2, 4, 6, 5 }, new int[] { 2, 4, 6, 6 }, new int[] { 2, 5, 8, 8 }, new int[] { 4, 5, 8, 8 }, new int[] { 4, 5, 8, 11 }, new int[] { 4, 8, 10, 11 }, new int[] { 4, 9, 12, 0x10 }, new int[] { 4, 9, 0x10, 0x10 }, new int[] { 6, 10, 12, 0x12 }, new int[] { 6, 10, 0x11, 0x10 }, 
-            new int[] { 6, 11, 0x10, 0x13 }, new int[] { 6, 13, 0x12, 0x15 }, new int[] { 7, 14, 0x15, 0x19 }, new int[] { 8, 0x10, 20, 0x19 }, new int[] { 8, 0x11, 0x17, 0x19 }, new int[] { 9, 0x11, 0x17, 0x22 }, new int[] { 9, 0x12, 0x19, 30 }, new int[] { 10, 20, 0x1b, 0x20 }, new int[] { 12, 0x15, 0x1d, 0x23 }, new int[] { 12, 0x17, 0x22, 0x25 }, new int[] { 12, 0x19, 0x22, 40 }, new int[] { 13, 0x1a, 0x23, 0x2a }, new int[] { 14, 0x1c, 0x26, 0x2d }, new int[] { 15, 0x1d, 40, 0x30 }, new int[] { 0x10, 0x1f, 0x2b, 0x33 }, new int[] { 0x11, 0x21, 0x2d, 0x36 }, 
-            new int[] { 0x12, 0x23, 0x30, 0x39 }, new int[] { 0x13, 0x25, 0x33, 60 }, new int[] { 0x13, 0x26, 0x35, 0x3f }, new int[] { 20, 40, 0x38, 0x42 }, new int[] { 0x15, 0x2b, 0x3b, 70 }, new int[] { 0x16, 0x2d, 0x3e, 0x4a }, new int[] { 0x18, 0x2f, 0x41, 0x4d }, new int[] { 0x19, 0x31, 0x44, 0x51 }
-         };
         internal int version;
+        internal int errorCollectionLevel;
+        internal int maskPattern;
+        internal int dataCapacity;
+        internal bool[][] moduleMatrix;
         internal int width;
+        internal int height;
+        internal Point[][] alignmentPattern;
+        internal int[][] numErrorCollectionCode = new int[][] { 
+            new int[] { 7, 10, 13, 0x11 }, new int[] { 10, 0x10, 0x16, 0x1c }, new int[] { 15, 0x1a, 0x24, 0x2c }, new int[] { 20, 0x24, 0x34, 0x40 }, new int[] { 0x1a, 0x30, 0x48, 0x58 }, new int[] { 0x24, 0x40, 0x60, 0x70 }, new int[] { 40, 0x48, 0x6c, 130 }, new int[] { 0x30, 0x58, 0x84, 0x9c }, new int[] { 60, 110, 160, 0xc0 }, new int[] { 0x48, 130, 0xc0, 0xe0 }, new int[] { 80, 150, 0xe0, 0x108 }, new int[] { 0x60, 0xb0, 260, 0x134 }, new int[] { 0x68, 0xc6, 0x120, 0x160 }, new int[] { 120, 0xd8, 320, 0x180 }, new int[] { 0x84, 240, 360, 0x1b0 }, new int[] { 0x90, 280, 0x198, 480 },
+            new int[] { 0xa8, 0x134, 0x1c0, 0x214 }, new int[] { 180, 0x152, 0x1f8, 0x24c }, new int[] { 0xc4, 0x16c, 0x222, 650 }, new int[] { 0xe0, 0x1a0, 600, 700 }, new int[] { 0xe0, 0x1ba, 0x284, 750 }, new int[] { 0xfc, 0x1dc, 690, 0x330 }, new int[] { 270, 0x1f8, 750, 900 }, new int[] { 300, 560, 810, 960 }, new int[] { 0x138, 0x24c, 870, 0x41a }, new int[] { 0x150, 0x284, 0x3b8, 0x456 }, new int[] { 360, 700, 0x3fc, 0x4b0 }, new int[] { 390, 0x2d8, 0x41a, 0x4ec }, new int[] { 420, 0x310, 0x474, 0x546 }, new int[] { 450, 0x32c, 0x4b0, 0x5a0 }, new int[] { 480, 0x364, 0x50a, 0x5fa }, new int[] { 510, 0x39c, 0x546, 0x654 },
+            new int[] { 540, 980, 0x5a0, 0x6ae }, new int[] { 570, 0x40c, 0x5fa, 0x708 }, new int[] { 570, 0x428, 0x636, 0x762 }, new int[] { 600, 0x460, 0x690, 0x7bc }, new int[] { 630, 0x4b4, 0x6ea, 0x834 }, new int[] { 660, 0x4ec, 0x744, 0x8ac }, new int[] { 720, 0x524, 0x79e, 0x906 }, new int[] { 750, 0x55c, 0x7f8, 0x97e }
+        };
+        internal int[][] numRSBlocks = new int[][] { 
+            new int[] { 1, 1, 1, 1 }, new int[] { 1, 1, 1, 1 }, new int[] { 1, 1, 2, 2 }, new int[] { 1, 2, 2, 4 }, new int[] { 1, 2, 4, 4 }, new int[] { 2, 4, 4, 4 }, new int[] { 2, 4, 6, 5 }, new int[] { 2, 4, 6, 6 }, new int[] { 2, 5, 8, 8 }, new int[] { 4, 5, 8, 8 }, new int[] { 4, 5, 8, 11 }, new int[] { 4, 8, 10, 11 }, new int[] { 4, 9, 12, 0x10 }, new int[] { 4, 9, 0x10, 0x10 }, new int[] { 6, 10, 12, 0x12 }, new int[] { 6, 10, 0x11, 0x10 },
+            new int[] { 6, 11, 0x10, 0x13 }, new int[] { 6, 13, 0x12, 0x15 }, new int[] { 7, 14, 0x15, 0x19 }, new int[] { 8, 0x10, 20, 0x19 }, new int[] { 8, 0x11, 0x17, 0x19 }, new int[] { 9, 0x11, 0x17, 0x22 }, new int[] { 9, 0x12, 0x19, 30 }, new int[] { 10, 20, 0x1b, 0x20 }, new int[] { 12, 0x15, 0x1d, 0x23 }, new int[] { 12, 0x17, 0x22, 0x25 }, new int[] { 12, 0x19, 0x22, 40 }, new int[] { 13, 0x1a, 0x23, 0x2a }, new int[] { 14, 0x1c, 0x26, 0x2d }, new int[] { 15, 0x1d, 40, 0x30 }, new int[] { 0x10, 0x1f, 0x2b, 0x33 }, new int[] { 0x11, 0x21, 0x2d, 0x36 },
+            new int[] { 0x12, 0x23, 0x30, 0x39 }, new int[] { 0x13, 0x25, 0x33, 60 }, new int[] { 0x13, 0x26, 0x35, 0x3f }, new int[] { 20, 40, 0x38, 0x42 }, new int[] { 0x15, 0x2b, 0x3b, 70 }, new int[] { 0x16, 0x2d, 0x3e, 0x4a }, new int[] { 0x18, 0x2f, 0x41, 0x4d }, new int[] { 0x19, 0x31, 0x44, 0x51 }
+        };
 
         public QRCodeSymbol(bool[][] moduleMatrix)
         {
@@ -165,10 +165,8 @@
             return flagArray;
         }
 
-        public virtual bool getElement(int x, int y)
-        {
-            return this.moduleMatrix[x][y];
-        }
+        public virtual bool getElement(int x, int y) => 
+            this.moduleMatrix[x][y];
 
         internal virtual void initialize()
         {
@@ -191,9 +189,9 @@
             }
             for (int j = 0; j < numArray.Length; j++)
             {
-                for (int m = 0; m < numArray.Length; m++)
+                for (int k = 0; k < numArray.Length; k++)
                 {
-                    pointArray[m][j] = new Point(numArray[m], numArray[j]);
+                    pointArray[k][j] = new Point(numArray[k], numArray[j]);
                 }
             }
             this.alignmentPattern = pointArray;
@@ -313,13 +311,55 @@
             }
         }
 
-        public virtual Point[][] AlignmentPattern
+        public virtual int NumErrorCollectionCode =>
+            this.numErrorCollectionCode[this.version - 1][this.errorCollectionLevel];
+
+        public virtual int NumRSBlocks =>
+            this.numRSBlocks[this.version - 1][this.errorCollectionLevel];
+
+        public virtual int Version =>
+            this.version;
+
+        public virtual string VersionReference
         {
             get
             {
-                return this.alignmentPattern;
+                char[] chArray = new char[] { 'L', 'M', 'Q', 'H' };
+                return (Convert.ToString(this.version) + "-" + chArray[this.errorCollectionLevel]);
             }
         }
+
+        public virtual Point[][] AlignmentPattern =>
+            this.alignmentPattern;
+
+        public virtual int DataCapacity =>
+            this.dataCapacity;
+
+        public virtual int ErrorCollectionLevel =>
+            this.errorCollectionLevel;
+
+        public virtual int MaskPatternReferer =>
+            this.maskPattern;
+
+        public virtual string MaskPatternRefererAsString
+        {
+            get
+            {
+                string str = Convert.ToString(this.MaskPatternReferer, 2);
+                int length = str.Length;
+                for (int i = 0; i < (3 - length); i++)
+                {
+                    str = "0" + str;
+                }
+                return str;
+            }
+        }
+
+        public virtual int Width =>
+            this.width;
+
+        public virtual int Height =>
+            this.height;
 
         public virtual int[] Blocks
         {
@@ -404,93 +444,6 @@
                     numArray[i] = (int) list2[i];
                 }
                 return numArray;
-            }
-        }
-
-        public virtual int DataCapacity
-        {
-            get
-            {
-                return this.dataCapacity;
-            }
-        }
-
-        public virtual int ErrorCollectionLevel
-        {
-            get
-            {
-                return this.errorCollectionLevel;
-            }
-        }
-
-        public virtual int Height
-        {
-            get
-            {
-                return this.height;
-            }
-        }
-
-        public virtual int MaskPatternReferer
-        {
-            get
-            {
-                return this.maskPattern;
-            }
-        }
-
-        public virtual string MaskPatternRefererAsString
-        {
-            get
-            {
-                string str = Convert.ToString(this.MaskPatternReferer, 2);
-                int length = str.Length;
-                for (int i = 0; i < (3 - length); i++)
-                {
-                    str = "0" + str;
-                }
-                return str;
-            }
-        }
-
-        public virtual int NumErrorCollectionCode
-        {
-            get
-            {
-                return this.numErrorCollectionCode[this.version - 1][this.errorCollectionLevel];
-            }
-        }
-
-        public virtual int NumRSBlocks
-        {
-            get
-            {
-                return this.numRSBlocks[this.version - 1][this.errorCollectionLevel];
-            }
-        }
-
-        public virtual int Version
-        {
-            get
-            {
-                return this.version;
-            }
-        }
-
-        public virtual string VersionReference
-        {
-            get
-            {
-                char[] chArray = new char[] { 'L', 'M', 'Q', 'H' };
-                return (Convert.ToString(this.version) + "-" + chArray[this.errorCollectionLevel]);
-            }
-        }
-
-        public virtual int Width
-        {
-            get
-            {
-                return this.width;
             }
         }
     }

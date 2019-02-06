@@ -4,10 +4,10 @@
 
     public class BCH15_5
     {
-        internal static string[] bitName = new string[] { "c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "d0", "d1", "d2", "d3", "d4" };
         internal int[][] gf16;
-        internal int numCorrectedError;
         internal bool[] recieveData;
+        internal int numCorrectedError;
+        internal static string[] bitName = new string[] { "c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "d0", "d1", "d2", "d3", "d4" };
 
         public BCH15_5(bool[] source)
         {
@@ -229,13 +229,8 @@
             return index;
         }
 
-        public virtual int NumCorrectedError
-        {
-            get
-            {
-                return this.numCorrectedError;
-            }
-        }
+        public virtual int NumCorrectedError =>
+            this.numCorrectedError;
     }
 }
 
