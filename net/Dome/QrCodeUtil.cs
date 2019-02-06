@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 
-namespace Dome
+namespace ThoughtWorks.QRCode.Test
 {
     /// <summary>
     /// 二维码工具

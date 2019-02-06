@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dome
+namespace ThoughtWorks.QRCode.Test
 {
     class Program
     {
