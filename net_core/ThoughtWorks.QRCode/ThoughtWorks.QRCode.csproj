@@ -25,6 +25,14 @@ ThoughtWorks.QRCode很好用，但是该类库不支持.net core
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ThoughtWorks.QRCode.Properties.Resources.resources" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ThoughtWorks.QRCode.Properties.Resources.resources" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
   </ItemGroup>
 
