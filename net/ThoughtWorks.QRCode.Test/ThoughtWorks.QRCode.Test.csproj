@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F8620CE1-88C2-4C9F-A65C-5176E3412E2C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Dome</RootNamespace>
-    <AssemblyName>Dome</AssemblyName>
+    <RootNamespace>ThoughtWorks.QRCode.Test</RootNamespace>
+    <AssemblyName>ThoughtWorks.QRCode.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

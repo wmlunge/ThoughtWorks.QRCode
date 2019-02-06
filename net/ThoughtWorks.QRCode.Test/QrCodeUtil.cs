@@ -60,6 +60,7 @@ namespace ThoughtWorks.QRCode.Test
         {
             var qrCodeEncoder = new QRCodeEncoder();
             for (int version = 0; version < 50; version++)
+            {
                 for (int mode = 0; mode < 4; mode++)
                     for (int error = 0; error < 3; error++)
                         for (int scale = 0; scale < 3; scale++)
@@ -71,6 +72,7 @@ namespace ThoughtWorks.QRCode.Test
                             Console.WriteLine("version: {0},mode: {1},error: {2},scale: {3}", version, mode, error, scale);
                             qrCodeEncoder.Encode("Hello");
                         }
+            }
         }
     }
 }
