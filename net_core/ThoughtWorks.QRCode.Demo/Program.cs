@@ -1,4 +1,5 @@
 ﻿using System;
+using ThoughtWorks.QRCode.Properties;
 
 namespace ThoughtWorks.QRCode.Demo
 {
@@ -6,12 +7,6 @@ namespace ThoughtWorks.QRCode.Demo
     {
         static void Main(string[] args)
         {
-            //获取资源
-            //QrCodeUtil.SaveResource();
-
-            //编码测试
-            //QrCodeUtil.EncodeTest();
-
             var path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             var qr = QrCodeUtil.Encode("Hello World!");
             qr.Save(path);
