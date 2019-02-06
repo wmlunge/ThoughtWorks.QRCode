@@ -10,8 +10,6 @@ namespace ThoughtWorks.QRCode.Test
     {
         static void Main(string[] args)
         {
-            //QrCodeUtil.EncodeTest();
-
             var path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             var qr = QrCodeUtil.Encode("Hello World!");
             qr.Save(path);
