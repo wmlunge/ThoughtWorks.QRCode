@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.0</TargetFrameworks>
     <PackageId>ThoughtWorks.QRCode.Core</PackageId>
     <Authors>haoersheng,atalent</Authors>
     <Product>ThoughtWorks.QRCode.Core</Product>
@@ -17,7 +17,7 @@ ThoughtWorks.QRCode很好用，但是该类库不支持.net core
 如有侵权请联系我删除！！！</PackageReleaseNotes>
     <PackageTags>ThoughtWorks.QRCode.Core</PackageTags>
     <RepositoryUrl>https://gitee.com/atalent/ThoughtWorks.QRCode.Core</RepositoryUrl>
-    <RepositoryType>netcoreapp2.0</RepositoryType>
+    <RepositoryType>netstandard2.0</RepositoryType>
     <PackageIconUrl>https://assets.gitee.com/assets/favicon.ico</PackageIconUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Copyright>ThoughtWorks.QRCode</Copyright>
