@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 
-namespace ThoughtWorks.QRCode.Test.NuGet
+namespace CommonUtils
 {
     /// <summary>
     /// 二维码工具
@@ -18,10 +16,10 @@ namespace ThoughtWorks.QRCode.Test.NuGet
         public static Bitmap Encode(string text)
         {
             var qrCodeEncoder = new QRCodeEncoder();
-            qrCodeEncoder.QRCodeVersion = 5;
             qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-            qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
             qrCodeEncoder.QRCodeScale = 4;
+            qrCodeEncoder.QRCodeVersion = 6;
+            qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
             return qrCodeEncoder.Encode(text);
         }
 
@@ -29,9 +27,7 @@ namespace ThoughtWorks.QRCode.Test.NuGet
         /// 定义参数,生成二维码
         /// </summary>
         public static void Create(string text, string path)
-        {
-            Encode(text).Save(path);
-        }
+        => Encode(text).Save(path);
 
         /// <summary>
         /// 返回二维码定义的字符串
@@ -47,8 +43,6 @@ namespace ThoughtWorks.QRCode.Test.NuGet
         /// 返回二维码定义的字符串
         /// </summary>
         public static string Decode(string path)
-        {
-            return Decode(new Bitmap(path));
-        }
+        => Decode(new Bitmap(path));
     }
 }

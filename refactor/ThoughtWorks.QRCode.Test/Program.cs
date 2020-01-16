@@ -1,5 +1,5 @@
-﻿using System;
-using ThoughtWorks.QRCode.Properties;
+﻿using CommonUtils;
+using System;
 
 namespace ThoughtWorks.QRCode.Test
 {

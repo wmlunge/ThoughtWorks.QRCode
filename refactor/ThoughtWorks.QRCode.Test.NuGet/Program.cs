@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonUtils;
+using System;
 
 namespace ThoughtWorks.QRCode.Test.NuGet
 {
