@@ -27,7 +27,7 @@
     <Version>1.0.1.2</Version>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
