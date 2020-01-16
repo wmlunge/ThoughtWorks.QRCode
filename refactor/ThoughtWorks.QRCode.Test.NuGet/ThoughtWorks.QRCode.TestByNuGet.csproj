@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ThoughtWorks.QRCode.Core" Version="1.0.1.2" />
+    <PackageReference Include="ThoughtWorks.QRCode.Standard" Version="1.0.0.1" />
   </ItemGroup>
 
 </Project>
