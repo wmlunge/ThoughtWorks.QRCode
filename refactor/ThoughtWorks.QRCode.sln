@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Test", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Test.NuGet", "ThoughtWorks.QRCode.Test.NuGet\ThoughtWorks.QRCode.Test.NuGet.csproj", "{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThoughtWorks.QRCode", "ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj", "{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode", "ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj", "{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Old", "ThoughtWorks.QRCode.Old\ThoughtWorks.QRCode.Old.csproj", "{891571DE-BABC-497B-9CB5-A1C6D89F4FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891571DE-BABC-497B-9CB5-A1C6D89F4FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891571DE-BABC-497B-9CB5-A1C6D89F4FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891571DE-BABC-497B-9CB5-A1C6D89F4FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891571DE-BABC-497B-9CB5-A1C6D89F4FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
