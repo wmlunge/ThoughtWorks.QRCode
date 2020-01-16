@@ -17,6 +17,10 @@ ThoughtWorks.QRCode很好用，但是该类库不支持标准库
     <Authors>haoersheng,atalent,rmbgame</Authors>
     <PackageProjectUrl>https://gitee.com/atalent/ThoughtWorks.QRCode</PackageProjectUrl>
     <RepositoryUrl>https://gitee.com/atalent/ThoughtWorks.QRCode</RepositoryUrl>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <Win32Resource />
+    <PackageIcon>thoughtworks.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +29,13 @@ ThoughtWorks.QRCode很好用，但是该类库不支持标准库
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="thoughtworks.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

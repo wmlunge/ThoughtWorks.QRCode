@@ -1,18 +1,19 @@
-# ThoughtWorks.QRCode.Core
-#### ThoughtWorks.QRCode Core版扩展
-ThoughtWorks.QRCode很好用，但是该类库不支持.net core  
-作者haoersheng没有留联系方式，于是我通过反编译dll，做了个.net core版本  
-如有侵权请联系我删除！！！  
-  
+# ThoughtWorks.QRCode
+#### ThoughtWorks.QRCode标准版
+ThoughtWorks.QRCode很好用，但是该类库不支持标准库
+
+于是我通过反编译dll，做了个标准版，并依赖引用了System.Drawing.Common
+
+作者haoersheng没有留联系方式，如有侵权请联系我删除！！！  
+
 代码摘要  
-  
-```
-using System;
+
+```c#
 using System.Drawing;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 
-namespace ThoughtWorks.QRCode.Demo
+namespace CommonUtils
 {
     /// <summary>
     /// 二维码工具
@@ -24,80 +25,41 @@ namespace ThoughtWorks.QRCode.Demo
         /// </summary>
         public static Bitmap Encode(string text)
         {
-            try
-            {
-                var qrCodeEncoder = new QRCodeEncoder();
-                qrCodeEncoder.QRCodeVersion = 5;
-                qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-                qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
-                qrCodeEncoder.QRCodeScale = 4;
-                return qrCodeEncoder.Encode(text);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
-            }
+            var qrCodeEncoder = new QRCodeEncoder();
+            qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+            qrCodeEncoder.QRCodeScale = 4;
+            qrCodeEncoder.QRCodeVersion = 6;
+            qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
+            return qrCodeEncoder.Encode(text);
         }
 
         /// <summary>
         /// 定义参数,生成二维码
         /// </summary>
         public static void Create(string text, string path)
-        {
-            try
-            {
-                var image = Encode(text);
-                if (image == null)
-                    return;
-                image.Save(path);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
+        => Encode(text).Save(path);
 
         /// <summary>
         /// 返回二维码定义的字符串
         /// </summary>
         public static string Decode(Bitmap image)
         {
-            try
-            {
-                var qrCodeBitmapImage = new QRCodeBitmapImage(image);
-                var qrCodeDecoder = new QRCodeDecoder();
-                return qrCodeDecoder.decode(qrCodeBitmapImage); ;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return "#";
-            }
+            var qrCodeBitmapImage = new QRCodeBitmapImage(image);
+            var qrCodeDecoder = new QRCodeDecoder();
+            return qrCodeDecoder.decode(qrCodeBitmapImage); ;
         }
 
         /// <summary>
         /// 返回二维码定义的字符串
         /// </summary>
         public static string Decode(string path)
-        {
-            return Decode(new Bitmap(path));
-        }
+        => Decode(new Bitmap(path));
     }
 }
-
 ```
-  
 
-```
-using System;
 
-namespace ThoughtWorks.QRCode.Demo
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+```c#
             var path = "D:/" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
             var qr = QrCodeUtil.Encode("Hello World!");
             qr.Save(path);
@@ -109,10 +71,8 @@ namespace ThoughtWorks.QRCode.Demo
 
             Console.WriteLine("Press enter to exit...");
             Console.ReadLine();
-        }
-    }
-}
-
 ```
-源码  
-[https://gitee.com/atalent/ThoughtWorks.QRCode.Core](https://gitee.com/atalent/ThoughtWorks.QRCode.Core)
+源码
+
+[https://gitee.com/atalent/ThoughtWorks.QRCode](https://gitee.com/atalent/ThoughtWorks.QRCode)
+

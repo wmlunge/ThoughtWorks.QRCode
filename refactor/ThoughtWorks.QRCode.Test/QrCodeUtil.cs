@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 

@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode", "Thou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Old", "ThoughtWorks.QRCode.Old\ThoughtWorks.QRCode.Old.csproj", "{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EB2C165-B7B0-4FA1-B35D-2D98E21A1305}"
+	ProjectSection(SolutionItems) = preProject
+		..\readme.md = ..\readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
