@@ -4,12 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>ThoughtWorks.QRCode.snk</AssemblyOriginatorKeyFile>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>ThoughtWorks.QRCode很好用，但是该类库不支持标准库
+    <Description>二维码识别/生成工具ThoughtWorks.QRCode标准库
+ThoughtWorks.QRCode很好用，但是该类库不支持标准库
 于是我通过反编译dll，做了个标准版，并依赖引用了System.Drawing.Common
 作者haoersheng没有留联系方式，如有侵权请联系我删除！！！</Description>
-    <PackageReleaseNotes>ThoughtWorks.QRCode很好用，但是该类库不支持标准库
+    <PackageReleaseNotes>二维码识别/生成工具ThoughtWorks.QRCode标准库
+ThoughtWorks.QRCode很好用，但是该类库不支持标准库
 于是我通过反编译dll，做了个标准版，并依赖引用了System.Drawing.Common
 作者haoersheng没有留联系方式，如有侵权请联系我删除！！！</PackageReleaseNotes>
     <Authors>haoersheng,atalent,rmbgame</Authors>
@@ -19,13 +21,13 @@
     <Win32Resource />
     <PackageIcon>thoughtworks.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
     <PackageId>ThoughtWorks.QRCode.Standard</PackageId>
     <Company>ThoughtWorks</Company>
     <Copyright>ThoughtWorks</Copyright>
     <PackageTags>二维码识别/生成工具ThoughtWorks.QRCode标准库</PackageTags>
     <Product>二维码识别/生成工具ThoughtWorks.QRCode标准库</Product>
-    <FileVersion>1.0.0.2</FileVersion>
+    <FileVersion>1.0.0.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
