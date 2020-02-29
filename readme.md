@@ -1,5 +1,5 @@
-# ThoughtWorks.QRCode
-#### ThoughtWorks.QRCode标准版
+# 二维码识别/生成工具ThoughtWorks.QRCode标准库
+
 ThoughtWorks.QRCode很好用，但是该类库不支持标准库
 
 于是我通过反编译dll，做了个标准版，并依赖引用了System.Drawing.Common

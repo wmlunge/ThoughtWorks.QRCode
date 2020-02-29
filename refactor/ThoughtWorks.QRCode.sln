@@ -5,16 +5,14 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Test", "ThoughtWorks.QRCode.Test\ThoughtWorks.QRCode.Test.csproj", "{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.TestByNuGet", "ThoughtWorks.QRCode.Test.NuGet\ThoughtWorks.QRCode.TestByNuGet.csproj", "{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode", "ThoughtWorks.QRCode\ThoughtWorks.QRCode.csproj", "{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.Old", "ThoughtWorks.QRCode.Old\ThoughtWorks.QRCode.Old.csproj", "{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EB2C165-B7B0-4FA1-B35D-2D98E21A1305}"
 	ProjectSection(SolutionItems) = preProject
 		..\readme.md = ..\readme.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThoughtWorks.QRCode.TestByNuGet", "ThoughtWorks.QRCode.TestByNuGet\ThoughtWorks.QRCode.TestByNuGet.csproj", "{E02A50AA-FEDE-42DE-8815-AE3DFCE918BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +24,14 @@ Global
 		{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8608FDF-F4FD-4182-A0B7-730B0189A8B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C7F9765-F68A-4FCB-AECB-4D65A8D47810}.Release|Any CPU.Build.0 = Release|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544A49F2-BC5A-4E86-A35E-8CA5EB3850DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE80C4EB-7BDB-4495-A188-6BF8E8E84855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02A50AA-FEDE-42DE-8815-AE3DFCE918BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02A50AA-FEDE-42DE-8815-AE3DFCE918BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02A50AA-FEDE-42DE-8815-AE3DFCE918BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02A50AA-FEDE-42DE-8815-AE3DFCE918BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
